@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>GenAI DB Portal</title>
+</head>
+<body>
+  <h1>GenAI Database Query Portal</h1>
+  <form method="POST">
+    <label for="query">Enter SQL Query:</label><br>
+    <input type="text" name="query" required style="width:400px;"><br><br>
+    <input type="submit" value="Run Query">
+  </form>
+  {% if result %}
+    <h2>Database Result:</h2>
+    <pre>{{ result.db_data }}</pre>
+    <h2>Vector DB Similarity Search:</h2>
+    <pre>{{ result.vector_search }}</pre>
+    <h2>Gemini AI Summary:</h2>
+    <pre>{{ result.gemini_summary }}</pre>
+  {% endif %}
+</body>
+</html>
